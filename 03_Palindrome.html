@@ -1,0 +1,38 @@
+<!-- Write a function that checks whether a number is Palindrome or not -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome of a Number</title>
+</head>
+<body style="background-color: black;">
+    <script>
+        function checkPalindrome(n) {
+            if(n < 0) return false
+
+            let nCopy = n
+
+            let rev = 0
+
+            while (n > 0) {
+                let remainder = n % 10
+                rev = (10 * rev) + remainder
+                n = Math.floor(n / 10)
+            }
+
+            if (rev === nCopy) {
+                return true
+            } else {
+                return false                
+            }
+        }
+
+        let num = 14541
+
+        console.log(checkPalindrome(num));
+        
+    </script>
+</body>
+</html>

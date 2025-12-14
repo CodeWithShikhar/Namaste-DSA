@@ -1,0 +1,45 @@
+<!-- Write a function that finds the Second Largest number in an Array -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second Largest Number in an Array</title>
+  </head>
+  <body style="background-color: black">
+    <script>
+      let arr = [4, 9, 0, 2, 8, 7, 1];
+
+      function findSecondLargest(arr) {
+        if (arr.length == 0 || arr.length < 2) {
+            return null
+        }
+
+        let firstLargest = -Infinity;
+        let secondLargest = -Infinity;
+
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > firstLargest) {
+            secondLargest = firstLargest;
+            firstLargest = arr[i];
+          } else if (arr[i] > secondLargest && arr[i] !== firstLargest) {
+            secondLargest = arr[i];
+          }
+        }
+        return secondLargest
+      }
+
+      const result = findSecondLargest(arr);
+      console.log(result);
+      
+    </script>
+  </body>
+</html>
+
+
+<!-- 
+Array should not be empty
+Array must have more than 2 elements
+Second and First largest should not be same 
+-->

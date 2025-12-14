@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse a Number</title>
+</head>
+<body style="background-color: black;">
+    <script>
+        function reverseNumber(n) {
+            let nCopy = n
+
+            let rev = 0
+            
+            n = Math.abs(n)
+
+            while (n > 0) {
+                let remainder = n % 10
+                rev = (10 * rev) + remainder
+                n = Math.floor(n / 10)
+            }
+
+            return nCopy < 0 ? -rev: rev
+        }
+
+        console.log(reverseNumber(123));
+        
+    </script>
+</body>
+</html>

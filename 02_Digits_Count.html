@@ -1,0 +1,34 @@
+<!-- Write a function that returns the count of digits in a number -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number of Digits in a Number</title>
+</head>
+<body style="background-color: black;">
+    <script>
+
+        function countDigits(n) {
+            n = Math.abs(n)
+
+            let count = 0
+            
+            if(n == 0) return 1
+
+            while (n > 0) {
+                n = Math.floor(n / 10)
+                count++
+            }
+
+            return count
+        }
+
+        let num = -999
+
+        console.log(countDigits(num));
+        
+    </script>
+</body>
+</html>
