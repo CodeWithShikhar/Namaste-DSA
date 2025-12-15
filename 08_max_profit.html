@@ -1,0 +1,41 @@
+<!-- You are given an array prices where prices[i] is the price of a given stock on the i-th day. 
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+Return the maximum profit you can achieve from this transaction. I fyou cannot achieve any profit, return 0 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best time to Buy and Sell</title>
+</head>
+<body style="background-color: black;">
+    <script>
+        function maxProfit(prices) {
+            let min = prices[0]
+
+            let maxProfit = 0
+
+            for (let i = 1; i < prices.length; i++) {
+                if (prices[i] - min > maxProfit) {
+                    maxProfit = prices[i]
+                }
+
+                if (prices[i] < min) {
+                    min = prices[i]
+                }
+            }
+
+            return maxProfit
+        }
+
+        let prices = [7, 1, 5, 3, 6, 4]
+
+        // let prices = [7, 6, 4, 3, 1]
+
+        console.log(maxProfit(prices));
+        
+    </script>
+</body>
+</html>

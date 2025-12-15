@@ -1,0 +1,44 @@
+<!-- You are given two integer arrays nums1 and muns2, sorted in non-decreasing order, and two intgers m and n, representing the number of elements in nums and nums2.
+Merge nums1 and nums2 into asingle array sorted in non-decreasing order. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Sorted Array</title>
+</head>
+<body style="background-color: black;">
+    <script>
+        let nums1 = [1, 2, 3]
+        let nums2 = [2, 5, 6]
+        let m = 3
+        let n = 3
+
+        function merge(nums1, nums2, m, n) {
+
+            let nums1Copy = nums1.slice(0, m)
+
+            let p1 = 0
+            let p2 = 0
+
+            for(let i = 0; i < m+n; i++) {
+                if (p2 >= n || (p1 < m && nums1Copy[p1] < nums2[p2])) {
+                    nums1[i] = nums1Copy[p1]
+                    p1++
+                }
+                else {
+                    nums1[i] = nums2[p2]
+                    p2++
+                }
+            }
+
+            return nums1  
+
+        }
+
+        console.log(merge(nums1, nums2, m, n));
+        
+    </script>
+</body>
+</html >
