@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum of odd elements in an Array</title>
+  </head>
+  <body style="background-color: black;">
+    <script>
+      let arr = [5, 3, 2, 0, 1];
+
+      function sum(n) {
+        isOdd = arr[n] % 2 != 0;
+
+        if (n == 0) {
+          return isOdd ? arr[n] : 0;
+        }
+
+        return (isOdd ? arr[n] : 0) + sum(n - 1);
+      }
+
+      console.log(sum(arr.length - 1));
+    </script>
+  </body>
+</html>
