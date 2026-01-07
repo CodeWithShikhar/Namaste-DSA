@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+</head>
+<body style="background-color: black;">
+    <script>
+        let arr = [7, 1, 5, 4, 3, 2];
+        let n = arr.length;
+
+        function bubbleSort(a) {
+            for (let i = 0; i < n - 1; i++) {
+
+                let isSwapped = false
+                
+                for (let j = 0; j < n - i - 1; j++) {
+                    if (a[j] > a[j + 1]) {
+                        let temp = a[j];
+                        a[j] = a[j + 1];
+                        a[j + 1] = temp;
+
+                        isSwapped = true
+                    }
+                }
+
+                if (!isSwapped) break
+            }
+        }
+
+        bubbleSort(arr);
+
+        console.log(arr);
+        </script>
+</body>
+</html>
